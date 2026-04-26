@@ -641,6 +641,40 @@
       .arrival-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     }
 
+    /* ─── BRING LIST ─────────────────────────────────────── */
+    .bring-list { display: flex; flex-direction: column; gap: 12px; }
+    .bring-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .bring-icon {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+      width: 36px;
+      height: 36px;
+      background: rgba(200,145,58,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bring-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+    .bring-detail { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
     /* ─── HOTEL ──────────────────────────────────────────── */
     .hotel-card {
       border: 1px solid var(--border);
@@ -844,7 +878,7 @@
   <div class="cash-note">
     <div class="cash-note-icon">€</div>
     <div>
-      <strong>Bring at least €200 in cash.</strong> Greeks appreciate cash payments and will often give you a better price on the bill.
+      <strong>Bring at least €200 in cash.</strong> Clubs often give discounts when paying cash — let's make use of that.
     </div>
   </div>
 
@@ -890,6 +924,11 @@
       <div class="bachelor-crown">★ The Bachelor</div>
       <div class="arrival-name">Fabi</div>
       <div class="arrival-time">18:20</div>
+      <div class="arrival-note"></div>
+    </div>
+    <div class="arrival-card">
+      <div class="arrival-name">Oliver</div>
+      <div class="arrival-time">18:40</div>
       <div class="arrival-note"></div>
     </div>
     <div class="arrival-card">
@@ -961,16 +1000,24 @@
         </div>
       </div>
       <div class="event">
+        <div class="event-time">18:30–19:00</div>
+        <div class="event-body">
+          <div class="event-name">Pre-Dinner Drinks — Four Seasons</div>
+        </div>
+      </div>
+      <div class="event">
         <div class="event-time">21:00</div>
         <div class="event-body">
           <div class="event-name">Dinner — Akti</div>
           <div class="event-detail">Dockside seafood on the Vouliagmeni waterfront.</div>
+          <span class="event-badge badge-confirmed">Confirmed</span>
         </div>
       </div>
       <div class="event">
         <div class="event-time">Night</div>
         <div class="event-body">
-          <div class="event-name">Athens Nightlife</div>
+          <div class="event-name">TBD</div>
+          <span class="event-badge badge-pending">To Confirm</span>
         </div>
       </div>
     </div>
@@ -993,14 +1040,21 @@
         </div>
       </div>
       <div class="event">
-        <div class="event-time">Afternoon</div>
+        <div class="event-time">12:00</div>
         <div class="event-body">
           <div class="event-name">Lunch at Krabo + Beach</div>
-          <span class="event-badge badge-pending">To Confirm</span>
+          <span class="event-badge badge-confirmed">Confirmed</span>
         </div>
       </div>
       <div class="event">
-        <div class="event-time">20:30</div>
+        <div class="event-time">Evening</div>
+        <div class="event-body">
+          <div class="event-name">Acropolis Hike</div>
+          <div class="event-detail">Optional — depending on lunch alcohol levels.</div>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">20:00</div>
         <div class="event-body">
           <div class="event-name">Balthazar Bar</div>
           <span class="event-badge badge-confirmed">Confirmed · 16 pax</span>
@@ -1010,6 +1064,7 @@
         <div class="event-time">Late</div>
         <div class="event-body">
           <div class="event-name">Alcatraz</div>
+          <span class="event-badge badge-pending">To Confirm</span>
         </div>
       </div>
     </div>
@@ -1031,6 +1086,12 @@
           <div class="event-name">Catamaran — M/S Caldera</div>
           <div class="event-detail">5-hour private cruise. Depart Alimos Marina. <a href="https://www.clickandboat.com/en/boat-rental/athens/catamaran/lagoon-420-bjvkyk?fromDate=2026-05-30&toDate=2026-05-30" target="_blank" rel="noopener" style="color:var(--gold-light);text-decoration:none;border-bottom:1px solid rgba(232,185,106,0.4);">View listing ↗</a></div>
           <span class="event-badge badge-confirmed">Confirmed</span>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-time">Afternoon</div>
+        <div class="event-body">
+          <div class="event-name">Relax</div>
         </div>
       </div>
       <div class="event">
@@ -1063,7 +1124,7 @@
       <div class="event">
         <div class="event-time">Morning</div>
         <div class="event-body">
-          <div class="event-name">Farewell Breakfast</div>
+          <div class="event-name">Breakfast &amp; Departure</div>
         </div>
       </div>
     </div>
